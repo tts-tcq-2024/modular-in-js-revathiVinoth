@@ -18,7 +18,7 @@ export function getColorFromPairNumber(pairNumber) {
   return pair;
 }
 
-function getPairNumberFromColor(pair) {
+export function getPairNumberFromColor(pair) {
   let majorIndex = -1;
   reassignMajorOrMinorIndex(pair, majorIndex, MajorColorNames);
 
@@ -32,7 +32,7 @@ function getPairNumberFromColor(pair) {
   return (majorIndex * MinorColorNames.length) + (minorIndex + 1);
 }
 
-export function reassignMajorOrMinorIndex(pair, index, colorNames) {
+function reassignMajorOrMinorIndex(pair, index, colorNames) {
   for (let i = 0; i < colorNames.length; i++) {
     if (colorNames[i] == pair.majorColor) {
       index = i;
