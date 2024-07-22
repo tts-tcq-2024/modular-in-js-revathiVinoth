@@ -1,5 +1,5 @@
 import { getColorFromPairNumber, getPairNumberFromColor } from "./colorPairUtils";
-import printManualForColorPair from "./printManualForColorPair";
+import { printManualForColorPair } from "./printManualForColorPair";
 
 function colorCoderTest() {
     pairNumber = 4;
