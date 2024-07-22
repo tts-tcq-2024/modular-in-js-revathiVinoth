@@ -1,7 +1,7 @@
 import { MajorColorNames, MinorColorNames } from "./constants";
 import { getColorFromPairNumber } from "./colorPairUtils";
 
-function printManualForColorPair() {
+export function printManualForColorPair() {
   const minorSize = MajorColorNames.length;
   const majorSize = MinorColorNames.length;
   let content = '';
@@ -13,5 +13,3 @@ function printManualForColorPair() {
 
   return content;
 }
-
-export default { printManualForColorPair };

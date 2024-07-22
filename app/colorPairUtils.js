@@ -2,7 +2,7 @@ import { MajorColorNames, MinorColorNames } from "./constants";
 import { ColorPair } from "./colorPair";
 
 
-function getColorFromPairNumber(pairNumber) {
+export function getColorFromPairNumber(pairNumber) {
   let minorSize = MajorColorNames.length;
   let majorSize = MinorColorNames.length;
 
@@ -20,10 +20,10 @@ function getColorFromPairNumber(pairNumber) {
 
 function getPairNumberFromColor(pair) {
   let majorIndex = -1;
-  reassignMajorOrMinorIndex(pair, majorIndex);
+  reassignMajorOrMinorIndex(pair, majorIndex, MajorColorNames);
 
   let minorIndex = -1;
-  reassignMajorOrMinorIndex(pair, minorIndex);
+  reassignMajorOrMinorIndex(pair, minorIndex, MinorColorNames);
 
   if (majorIndex == -1 || minorIndex == -1) {
     throw `Unknown Colors:${pair.toString()}`;
@@ -32,13 +32,11 @@ function getPairNumberFromColor(pair) {
   return (majorIndex * MinorColorNames.length) + (minorIndex + 1);
 }
 
-function reassignMajorOrMinorIndex(pair, index) {
-  for (let i = 0; i < MajorColorNames.length; i++) {
-    if (MajorColorNames[i] == pair.majorColor) {
+export function reassignMajorOrMinorIndex(pair, index, colorNames) {
+  for (let i = 0; i < colorNames.length; i++) {
+    if (colorNames[i] == pair.majorColor) {
       index = i;
       break;
     }
   }
 }
-
-export default { getColorFromPairNumber, getPairNumberFromColor }

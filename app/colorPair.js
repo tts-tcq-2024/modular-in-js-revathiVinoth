@@ -1,4 +1,4 @@
-function ColorPair(majorColor, minorColor) {
+export function ColorPair(majorColor, minorColor) {
   this.majorColor = majorColor;
   this.minorColor = minorColor;
 }
@@ -6,5 +6,3 @@ function ColorPair(majorColor, minorColor) {
 ColorPair.prototype.toString = function () {
   return `MajorColor: ${this.majorColor}, MinorColor: ${this.minorColor}`;
 };
-
-export default { ColorPair };
