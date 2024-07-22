@@ -8,7 +8,7 @@ function printManualForColorPair() {
 
   for (let pairNumber = 1; i <= minorSize * majorSize; pairNumber++) {
     const colorPair = getColorFromPairNumber(i);
-    content += `Pair Number: ${pairNumber}, Colors: ${colorPair.toString()}\n`;
+    content += `Pair Number: ${pairNumber}, Colors: ${colorPair.toString()}`;
   }
 
   return content;
