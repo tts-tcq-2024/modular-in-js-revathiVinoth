@@ -1,34 +1,21 @@
-import { getColorFromPairNumber, getPairNumberFromColor } from "./colorPairUtils";
-import { printManualForColorPair } from "./printManualForColorPair";
 
-function colorCoderTest() {
-    pairNumber = 4;
-    let testPair1 = getColorFromPairNumber(pairNumber);
+const MajorColorNames = ["White", "Red", "Black", "Yellow", "Violet"];
+const MinorColorNames = ["Blue", "Orange", "Green", "Brown", "Slate"];
 
-    console.assert(testPair1.majorColor == "WHITE");
-    console.assert(testPair1.minorColor == "BROWN");
+class ColorPair {
+    constructor(majorColor, minorColor) {
+        this.majorColor = majorColor;
+        this.minorColor = minorColor;
+    }
 
-    pairNumber = 5;
-    testPair1 = getColorFromPairNumber(pairNumber);
-    console.assert(testPair1.majorColor == "WHITE");
-    console.assert(testPair1.minorColor == "SLATEGRAY");
-
-    pairNumber = 23;
-    testPair1 = getColorFromPairNumber(pairNumber);
-    console.assert(testPair1.majorColor == "RED");
-    console.assert(testPair1.minorColor == "GREEN");
-
-    let testPair2 = new ColorPair();
-    testPair2.majorColor = "YELLOW";
-    testPair2.minorColor = "GREEN";
-    pairNumber = getPairNumberFromColor(testPair2);
-    console.assert(pairNumber == 18);
-
-    testPair2 = new ColorPair();
-    testPair2.majorColor = "RED";
-    testPair2.minorColor = "BLUE";
-    pairNumber = getPairNumberFromColor(testPair2);
-    console.assert(pairNumber == 6);
+    toString() {
+        return `${this.majorColor} - ${this.minorColor}`;
+    }
 }
-colorCoderTest();
-printManualForColorPair();
+
+// Export the constants and the class
+module.exports = {
+    MajorColorNames,
+    MinorColorNames,
+    ColorPair
+};

@@ -1,6 +1,8 @@
-export const MajorColorNames = [
+const MajorColorNames = [
   "WHITE", "RED", "BLACK", "YELLOW", "VIOLET"
 ];
-export const MinorColorNames = [
+const MinorColorNames = [
   "BLUE", "ORANGE", "GREEN", "BROWN", "SLATE"
 ];
+
+module.export = { MajorColorNames, MinorColorNames };
